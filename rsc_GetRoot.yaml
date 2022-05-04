@@ -1,0 +1,4 @@
+processor_resources:
+  - label: get_root
+    bloblang: |
+      root = this
