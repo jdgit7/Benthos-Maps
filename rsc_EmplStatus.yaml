@@ -1,0 +1,12 @@
+processor_resources:
+  - label: map_empl_status
+    bloblang: | 
+    
+      root = this
+      
+      let emplStatus = if this.EMPL_STATUS == "A" {"A"}
+                 else if this.EMPL_STATUS == "T" {"T"}
+                 else if this.EMPL_STATUS == "L" {"L"}
+                 else {"FAIL"}
+                    
+      root.EMPL_STATUS = $emplStatus

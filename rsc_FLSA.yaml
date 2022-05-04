@@ -1,0 +1,11 @@
+processor_resources:
+  - label: map_flsa
+    bloblang: | 
+    
+      root = this
+      
+      let flsa = if this.FLSA == "E" {"E"}
+                 else if this.FLSA == "N" {"N"}
+                 else {"FAIL"}
+                    
+      root.FLSA = $flsa

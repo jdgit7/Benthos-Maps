@@ -1,0 +1,10 @@
+processor_resources:
+  - label: map_country
+    bloblang: | 
+    
+      root = this
+      
+      let country = if this.COUNTRY == "USA" {"US"}
+                    else {"FAIL"}
+                    
+      root.COUNTRY = $country

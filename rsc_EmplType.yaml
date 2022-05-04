@@ -1,0 +1,11 @@
+processor_resources:
+  - label: map_empl_type
+    bloblang: | 
+    
+      root = this
+      
+      let emplType = if this.EMPL_TYPE == "FT" {"E"}
+                 else if this.EMPL_TYPE == "PT" {"E"}
+                 else {"FAIL"}
+                    
+      root.EMPL_TYPE = $emplType
